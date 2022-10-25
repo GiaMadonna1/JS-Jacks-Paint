@@ -1,12 +1,16 @@
 function configureListeners() {
-    let images = // select img elements  
+    let images = document.getElementbyTagName('img');  
 
 
      for (var i = 0; i < images.length; i++) {        
-        // iterate over images and add mouseover event listeners      
+        // iterate over images and add mouseover event listeners
+        images.addEventListener("mouseover", (MouseEvent) => {
+            if (MouseEvent.target.id === 'img') {
+            MouseEvent.target.style.color = "purple";
+        }
     } 
+    )}
 }
-
 function addOpacity(event) {
     // add appropriate CSS class
     getProductInfo(event.target.id);     
